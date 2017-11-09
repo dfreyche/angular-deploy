@@ -36,5 +36,16 @@ jobs:
       # run tests!
       - run: yarn test -sr --no-progress
       - run: yarn ng build --prod --no-progress
+      
+      # build and push Docker image
+      - run:
+          command: |
+            docker build -t awesomeapp.azurecr.io/angular-cli-nginx:1.0 .
+      - run:
+          command: |
+            docker login --username $DOCKER_USER --password $DOCKER_PASS awesomeapp.azurecr.io
+      - run:
+          command: |
+            docker push davidfreycheangularconnect.azurecr.io/angular-cli-nginx:1.0
 
 
