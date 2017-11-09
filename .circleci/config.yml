@@ -40,7 +40,7 @@ jobs:
       # build and push Docker image
       - run:
           command: |
-            docker build -t awesomeapp.azurecr.io/angular-cli-nginx:1.0 .
+            docker build -t davidfreycheangularconnect.azurecr.io/angular-cli-nginx:1.0 .
       - run:
           command: |
             docker login --username $DOCKER_USER --password $DOCKER_PASS awesomeapp.azurecr.io
