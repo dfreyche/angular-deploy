@@ -37,8 +37,6 @@ jobs:
       # run tests!
       - run: yarn test -sr --no-progress
       - run: yarn ng build --prod --no-progress
-      
-      # build and push Docker image
       - run:
           command: |
             docker build -t davidfreycheangularconnect.azurecr.io/angular-cli-nginx:1.0 .
